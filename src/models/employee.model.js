@@ -29,6 +29,7 @@ const employeeSchema = new mongoose.Schema(
     cedula: {
       type: String,
       unique: true,
+      required: true,
     },
     password: {
       type: String,
@@ -37,29 +38,6 @@ const employeeSchema = new mongoose.Schema(
     departamento: {
       type: String,
       required: true,
-    },
-    eps: {
-      type: String,
-      required: true,
-    },
-    fondoComp: {
-      type: String,
-      required: true,
-    },
-    cajaCom: {
-      type: String,
-      required: true,
-    },
-    arl: {
-      type: String,
-      required: true,
-    },
-    fechaIngreso: {
-      type: String,
-      required: true,
-    },
-    certificadoAlturas: {
-      type: String,
     },
     cargo: {
       type: String,

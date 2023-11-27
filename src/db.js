@@ -2,10 +2,9 @@ import mongoose from "mongoose";
 
 export const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/prueba");
+    await mongoose.connect("mongodb://127.0.0.1:27017/proaseco");
     console.log("MongoDB is connected");
   } catch (error) {
     console.error(error);
-    console.log("lol");
   }
 };

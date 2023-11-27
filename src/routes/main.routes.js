@@ -1,19 +1,19 @@
 import { Router } from "express";
-import { authRequired } from "../middlewares/vaidateToken";
+import { authRequired } from "../middlewares/vaidateToken.js";
 import {
   createEmployee,
   deleteEmployee,
-  getEmployee,
   getEmployees,
+  getEmployee,
   updateEmployee,
-} from "../controllers/employee.controller";
+} from "../controllers/employee.controller.js";
 
 const router = Router();
 
-router.get("/tasks", authRequired, getEmployees);
-router.get("/tasks/:id", authRequired, getEmployee);
-router.post("/tasks", authRequired, createEmployee);
-router.delete("/tasks", authRequired, deleteEmployee);
-router.put("/tasks", authRequired, updateEmployee);
+router.get("/employees", authRequired, getEmployees);
+router.get("/getEmployee/:cedula", getEmployee);
+router.post("/regEmployee", createEmployee);
+router.delete("/employee/:cedula", authRequired, deleteEmployee);
+router.put("/employee/:cedula", authRequired, updateEmployee);
 
 export default router;

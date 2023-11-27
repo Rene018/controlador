@@ -1,13 +1,19 @@
 import { Router } from "express";
-import { logout, profile, register } from "../controllers/auth.controller.js";
+import {
+  logout,
+  profile,
+  login,
+  verifyToken,
+} from "../controllers/auth.controller.js";
 import { authRequired } from "../middlewares/vaidateToken.js";
+import { loginSchema } from "../schemas/auth.schema.js";
+
 const router = Router();
-
-router.post("/register", register);
-
-// router.post("/login", login);
+router.post("/login", login);
 
 router.post("/logout", logout);
 
 router.get("/profile", authRequired, profile);
+
+router.get("/verify", verifyToken);
 export default router;
